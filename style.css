@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+
+
 #game {
     display: none;
     position: relative;
@@ -52,14 +55,17 @@ body {
     -webkit-font-smoothing: none;
     overscroll-behavior: none;
     min-height: 100vh;
-    text-rendering: geometricPrecision;
     place-items: center;
-    font-family: Pixelify Sans,serif;
+    font-family: 'Castoro',serif;
     font-style: normal;
     font-weight: 400;
     display: grid;
 }
 
+a {
+    text-decoration: none;
+    position: relative;
+}
 #room {
     z-index: 1;
     width: 640px;
@@ -67,6 +73,7 @@ body {
     position: relative;
     overflow: hidden;
     background-color: aliceblue;
+    border-radius: 5px;
 }
 
 *,:after,:before {
@@ -82,18 +89,77 @@ body {
 
 
 #door {
-    top: 100px;
+    top: -50px;
     left: 15px;
 }
 
 #lock {
-    top: 300px;
+    top: 200px;
     left: 67px;
     width: 170px;
 }
 
 #osumi {
-    top: 200px;
+    top: 0;
     left: 200px;
     width: 400px;
+}
+
+input[type=checkbox],input[type=radio] {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -1000px;
+}
+
+/* Title Screen */
+#title {
+    background-image: url('images/coverimage.png');
+    background-size: cover;
+    background-position: center;
+    z-index: calc(infinity);
+    display: grid;
+    position: fixed;
+    inset: 0;
+    place-items: center;
+    text-align: center;
+}
+
+#titleimg{
+        width: 700px;
+}
+
+#title > div {
+    display: grid;
+    justify-items: center;
+}
+
+#title [for="startgame"] {
+    position: relative;
+    display: inline-block;
+    /* spacing between button and text */
+    margin-block: 32px;
+    font-size: 50px;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+/* glowing animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 0px #ffffff69,0 0 5px #ffffff69,0 0 10px #ffffff96,0 0 20px #ffffff96,0 0 30px #ffffff96,0 0 40px #ffffff96,0 0 50px #ffffff96;
+    }
+    to {
+        text-shadow: 0 0 5px #ffffff69,0 0 10px #ffffff69,0 0 20px #ffffff69,0 0 30px #ffffff69,0 0 40px #ffffff69,0 0 50px #ffffff69,0 0 60px #ffffff69;
+    }
+}
+
+#title [for="startgame"]:hover {
+    cursor: pointer;
+}
+
+/* if start is checked, hide title screen */
+body:has(#startgame:checked) #title {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
 }
