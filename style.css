@@ -14,6 +14,10 @@
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
     }
+
+    #title > div {
+        transform: scale(0.8)
+    }
 }
 
 /* scale the game for larger viewports */
@@ -21,11 +25,19 @@
     #game {
         transform: scale(1.5)
     }
+
+    #title > div {
+        transform: scale(1)
+    }
 }
 
 @media (width>1280px) and (height>904px) {
     #game {
         transform: scale(2)
+    }
+
+    #title > div {
+        transform: scale(1.3)
     }
 }
 
