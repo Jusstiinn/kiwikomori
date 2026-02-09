@@ -11,6 +11,8 @@
  @media (width>768px) and (height>500px) {
     #game {
         display: grid;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
 }
 
@@ -43,7 +45,7 @@
 /* styles for small screen warning and touch device warning */
 #small,#touch {
     background: burlywood;
-    z-index: calc(infinity);
+    z-index: 9999;
     padding: 24px;
     font-size: 24px;
     position: absolute;
@@ -115,7 +117,7 @@ a {
 }
 
 /* hide all checkbox and radio input decoration, opacity 0 so it's still interactable but now fully cusotmisable */
-input[type=checkbox],input[type=radio] {
+* input[type=checkbox],* input[type=radio] {
     opacity: 0;
     z-index: -1;
     position: absolute;
@@ -130,12 +132,13 @@ input[type=checkbox],input[type=radio] {
     background-image: url('images/coverimage.png');
     background-size: cover;
     background-position: center;
-    z-index: calc(infinity);
+    z-index: 9998;
     display: grid;
     position: fixed;
     inset: 0;
     place-items: center;
     text-align: center;
+    transition: opacity 0.3s ease-in-out;
 }
 
 
@@ -152,8 +155,8 @@ input[type=checkbox],input[type=radio] {
 #title [for="startgame"] {
     position: relative;
     display: inline-block;
-    /* spacing between button and text */
-    margin-block: 32px;
+    /* spacing between button and title */
+    margin-top: 32px;
     font-size: 50px;
     animation: glow 1s ease-in-out infinite alternate;
 }
@@ -169,13 +172,83 @@ input[type=checkbox],input[type=radio] {
 }
 
 /* change cursor on hover to indicate it's clickable */
-#title [for="startgame"]:hover {
+#title label:hover, #archives label:hover, #collection label:hover {
     cursor: pointer;
 }
 
-/* if start is checked, hide title screen */
+/* if start game is checked, hide title screen */
 body:has(#startgame:checked) #title {
+    /* opacity 0 for smooth transition and pointer events none to make it unclickable */
     opacity: 0;
     pointer-events: none;
-    transition: 0.3s ease-in-out;
+}
+
+/* if startgame is checked, show game */
+body:has(#startgame:checked) #game {
+    /* opacity 1 to show it and pointer events auto to make it clickable */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Archives & Collections buttons */
+#title [for="collectionbtn"], #title [for="archivesbtn"] {
+    position: relative;
+    display: inline-block;
+    /* spacing between buttons */
+    padding: 5px;
+}
+
+#lesserbuttons {
+    margin: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lesserbutton {
+    height: 35px;
+}
+
+/* if archives or collection is checked, do not display game */
+body:has(#archivesbtn:checked) #game, body:has(#collectionbtn:checked) #game {
+    display: none;
+}
+
+/* if archives & collections is not checked, show game */
+body:not(:has(#archivesbtn:checked)) #game && body:not(:has(#collectionbtn:checked)) #game {
+    display: grid;
+}
+
+/* if archives is checked, show archives */
+body:has(#archivesbtn:checked) #archives {
+    /* opacity 1 to show it and pointer events auto to make it clickable */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* when back is checked, hide archives */
+body:has(#back:checked) #archives {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
+    opacity: 1;
+}
+
+/* =============== ARCHIVES SCREEN =============== */
+/* TODO: Archives Screen */
+#archives {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    /* hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 9999;
 }
