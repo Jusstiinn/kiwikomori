@@ -102,11 +102,44 @@ a {
     user-select: none;
     margin: 0;
     padding: 0;
+    image-rendering: smooth;
 }
 
 /* global positioning for all room elements */
 #room img {
     position: absolute;
+}
+
+/* =============== NAVIGATION =============== */
+.room {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.room.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#fade {
+    background-color: black;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+#fade.out {
+    opacity: 1;
+}
+
+/* hidden for now */
+#southBack {
+    display: none;
 }
 
 /* =============== NORTH ROOM ELEMENTS =============== */
