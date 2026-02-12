@@ -55,7 +55,7 @@
 
 /* styles for small screen warning and touch device warning */
 #small,#touch {
-    background: burlywood;
+    background-image: url('images/gameAssets/backgroundImage.svg');
     z-index: 9999;
     padding: 24px;
     font-size: 24px;
@@ -67,7 +67,7 @@
 
 /* background and global style  */
 body {
-    background: burlywood;
+    background-image: url('images/gameAssets/backgroundImage.svg');
     color: #fff;
     font-optical-sizing: auto;
     -webkit-font-smoothing: none;
@@ -142,6 +142,12 @@ a {
     left: -1000px;
 }
 
+
+/* =============== WEST ROOM ELEMENTS =============== */
+#westCrate {
+    top: 134px;
+    left: 420px;
+}
 /* =============== TITLE SCREEN =============== */
 
 /* bg image + centering */
