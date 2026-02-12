@@ -6,7 +6,6 @@
     position: relative;
 }
 
-/* TODO: make  title screen responsive */
 /* if the viewport is larger than 768x500, show the game */
  @media (width>768px) and (height>500px) {
     #game {
@@ -15,28 +14,28 @@
         transition: opacity 0.3s ease-in-out;
     }
 
-    #title > div {
+    #title > div{
         transform: scale(0.8)
     }
 }
 
 /* scale the game for larger viewports */
  @media (width>960px) and (height>678px) {
-    #game {
+    #game, #archives {
         transform: scale(1.5)
     }
 
-    #title > div {
+    #title > div{
         transform: scale(1)
     }
 }
 
 @media (width>1280px) and (height>904px) {
-    #game {
+    #game, #archives {
         transform: scale(2)
     }
 
-    #title > div {
+    #title > div{
         transform: scale(1.3)
     }
 }
@@ -63,7 +62,7 @@
     position: absolute;
     align-content: center;
     text-align: center;
-    inset: 0
+    inset: 0;
 }
 
 /* background and global style  */
@@ -98,19 +97,25 @@ a {
 }
 
 /* global default style to normalise stuff and box sizing */
-*,:after,:before {
+*,:after, :before {
     box-sizing: border-box;
     user-select: none;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 /* global positioning for all room elements */
-#room > img {
+#room img {
     position: absolute;
 }
 
 /* =============== NORTH ROOM ELEMENTS =============== */
+#room {
+    background-image: url('images/gameAssets/rooms/north/northScene.svg');
+    background-size: fill;
+    background-position: center;
+}
+
 #door {
     top: -50px;
     left: 15px;
@@ -124,7 +129,7 @@ a {
 
 #osumi {
     top: 0;
-    left: 200px;
+    left: 67px;
     width: 400px;
 }
 
@@ -257,10 +262,37 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
     place-items: center;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-image: url('images/gameAssets/backgroundImage.svg');
+    background-size: cover;
     /* hidden by default */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
     z-index: 9999;
+}
+
+/* styles for the scrollable box */
+.scrollable {
+    text-align: center;
+    background-color: #000000c2;
+    backdrop-filter: blur(2.5px);
+    padding: 50px;
+    margin: 50px;
+    border-radius: 20px;
+    width: 640px;
+    height: 400px;
+    position: relative;
+    border: 2px solid #9BD5ED;
+    /* enable scrolling */
+    overflow-y: scroll;
+}
+
+/* text align left, but keep the entire thing centered */
+.textblock {
+    display: inline-block;
+    text-align: left;
+}
+
+#archives img {
+    width: 200px;
 }
