@@ -21,7 +21,7 @@
 
 /* scale the game for larger viewports */
  @media (width>960px) and (height>678px) {
-    #game, #archives {
+    #game, .scrollable {
         transform: scale(1.5)
     }
 
@@ -31,7 +31,7 @@
 }
 
 @media (width>1280px) and (height>904px) {
-    #game, #archives {
+    #game, .scrollable {
         transform: scale(2)
     }
 
@@ -92,7 +92,7 @@ a {
     height: 400px;
     position: relative;
     overflow: hidden;
-    background-color: aliceblue;
+    background-color: black;
     border-radius: 5px;
 }
 
@@ -268,8 +268,8 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
     place-items: center;
     width: 100%;
     height: 100%;
-    background-image: url('images/gameAssets/backgroundImage.svg');
-    background-size: cover;
+    background-color: #42210583;
+    backdrop-filter: blur(10px);
     /* hidden by default */
     opacity: 0;
     pointer-events: none;
@@ -281,8 +281,7 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
 .scrollable {
     text-align: center;
     background-color: #000000c2;
-    backdrop-filter: blur(2.5px);
-    padding: 50px;
+    padding: 20px 50px 50px 50px;
     margin: 50px;
     border-radius: 20px;
     width: 640px;
@@ -290,7 +289,7 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
     position: relative;
     border: 2px solid #9BD5ED;
     /* enable scrolling */
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 /* text align left, but keep the entire thing centered */
