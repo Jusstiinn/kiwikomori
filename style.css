@@ -374,6 +374,21 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
 
 /* =============== ARCHIVES SCREEN =============== */
 /* TODO: Archives Screen */
+#divider {
+    transform: scale(1.75);
+}
+
+.archiveText {
+    margin-top: 20px;
+    font-size: 12px;
+
+}
+
+.archiveHeader {
+    font-size: 32px;
+    margin: 16px 0 16px 0;
+}
+
 #archives {
     position: fixed;
     inset: 0;
@@ -413,4 +428,11 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
 
 #archives img {
     width: 200px;
+}
+
+#osumiBio {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
