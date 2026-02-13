@@ -583,7 +583,7 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
 #dialogueWrap {
     position: absolute;
     top: 19%;
-    left: 20px;
+    left: 27px;
 }
 
 /* text bubble style */
@@ -598,7 +598,7 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
     text-align: center;
     color: #ffd277;
     font-family: "Philosopher", serif;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1.4;
     height: auto;
 }

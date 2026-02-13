@@ -123,3 +123,45 @@ function switchPOV() {
   }, 450);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const vnView = document.getElementById("vnView");
+    const dialogueText = document.getElementById("day1D");
+    const characterImg = document.getElementById("osumiVn");
+
+    const day1dialogue = [
+        {
+            text: "Oh hello! I wasn't expecting a camera repair shop of all things to open up here, in such a tucked away and hidden spot.",
+            img: "images/characters/estella_1.png"
+        },
+        {
+            text: "Still, I suppose hidden places are the most interesting ones.",
+            img: "images/characters/estella_2.png"
+        },
+        {
+            text: "Are you the owner here?",
+            img: "images/characters/estella_3.png"
+        },
+        {
+            text: "I actually have something I need fixed...",
+            img: "images/characters/estella_1.png"
+        }
+    ];
+
+    let currentIndex = 0;
+
+    vnView.addEventListener("click", () => {
+      // next dialogue
+        currentIndex++;
+
+        // if there is still dialogue left in the list, keep going
+        if (currentIndex < day1dialogue.length) {
+            dialogueText.textContent = day1dialogue[currentIndex].text;
+            characterImg.src = day1dialogue[currentIndex].img;
+        } else {
+          // restarts dialogue to loop again, will change later
+            currentIndex = 0;
+            day1dialogue.textContent = day1dialogue[0].text;
+            characterImg.src = day1dialogue[0].img;
+        }
+    });
+});
