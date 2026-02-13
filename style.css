@@ -125,6 +125,49 @@ button {
     border: none;
 }
 
+#navBack, [popovertargetaction="hide"] {
+    position: absolute;
+    top: 330px;
+    left: 300px;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+}
+
+#navLeft:hover, #navRight:hover, #navBack:hover, [popovertargetaction="hide"]:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px #ffb546);
+    transition: filter 0.3s ease-in-out;
+}
+
+#navBack:hover, [popovertargetaction="hide"]:hover {
+    top: 335px;
+    transition: top 0.3s ease;
+}
+
+[popover] {
+    border: 0;
+    margin: auto;
+    top: -400px;
+    right: 640px;
+    overflow: visible;
+}
+
+/* make sure popover scales */
+ @media (width>960px) and (height>678px) {
+        [popover] {
+            transform: scale(1.5);
+            top: -600px;
+            right: 960px;
+        }
+    }
+
+    @media (width>1280px) and (height>904px) {
+        [popover] {
+            transform: scale(2);
+            top: -800px;
+            right: 1280px;;
+        }
+    }
 /* =============== NAVIGATION =============== */
 .room {
     position: absolute;
@@ -171,20 +214,6 @@ button {
     transition: 0.3s ease-in-out;
 }
 
-#navBack {
-    position: absolute;
-    top: 330px;
-    left: 300px;
-    z-index: 2;
-    transition: 0.3s ease-in-out;
-}
-
-#navLeft:hover, #navRight:hover, #navBack:hover {
-    cursor: pointer;
-    filter: drop-shadow(0 0 2px #ffb546);
-    transition: filter 0.3s ease-in-out;
-}
-
 #navLeft:hover {
     left: 10px;
     transition: left 0.3s ease;
@@ -193,11 +222,6 @@ button {
 #navRight:hover {
     right: 10px;
     transition: right 0.3s ease;
-}
-
-#navBack:hover {
-    top: 335px;
-    transition: top 0.3s ease;
 }
 
 /* =============== NORTH ROOM ELEMENTS =============== */
@@ -240,6 +264,11 @@ button {
     top: 145px;
     left: 429px;
 }
+
+#westCrate-zoomedimg {
+    border-radius: 5px;
+}
+
 
 /* =============== EAST ROOM ELEMENTS =============== */
 
