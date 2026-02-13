@@ -49,6 +49,7 @@ We wanted to set the world in a magical fantasy vibe as it woud open up to a lot
 
 ## Media
 [PiCrew](https://picrew.me/en/image_maker/1649970) - Used in making all the characters sprites.
+
 Figma - Used in designing text and editing images
 
 ## Acknowledgements
