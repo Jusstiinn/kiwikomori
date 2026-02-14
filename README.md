@@ -30,6 +30,7 @@ We wanted to set the world in a magical fantasy vibe as it woud open up to a lot
 - Story choices - Allow players to have branching story options.
 - Collectibles - For different endings of each character.
 - Point and Click
+- Interactive 3D model viewing experience - Players can turn the model around, zoom in as well as pan the models.
 
 ## Technologies Used
 [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) - Used to make scenes appear on top of another (e.g. when opening drawers)

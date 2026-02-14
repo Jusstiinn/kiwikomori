@@ -648,6 +648,13 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
     overflow: hidden;
 }
 
+#exitViewerButton {
+    position: absolute;
+    width: 40px auto;
+    top: -290px;
+    left: -490px;
+}
+
 /* =============== VISUAL NOVEL VIEW =============== */
 #vnView {
     /* hidden by default */

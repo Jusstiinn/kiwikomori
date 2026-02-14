@@ -31,6 +31,7 @@
             <label for="back" class="backStyle">Back</label>
         </div> <!-- back button-->
         <div id="collectionContent">
+
             <div id="collectionMain">
                 <!--shelf image-->
                 <img src="images/collection_shelf.svg" alt="shelf" id="collectionShelf" draggable="false">
@@ -46,20 +47,22 @@
                     <img src="images/estellaCameraSil.svg" alt="estellaCamera" draggable="false" id="estellaCamera">
                     <img src="images/osumiCameraSil.svg" alt="osumiCamera" draggable="false" id="osumiCamera">
                 </div>
-
             </div> <!-- collectionMain-->
 
             <!-- 3D model viewer popup-->
-            <div id="viewerContainer">
-                <!-- 3D model of Estella's camera-->
-                <model-viewer alt="cameraEstella" src="models/antiqueCamera.glb" shadow-intensity="1" camera-controls id="estellaCamModel" class="modelViewer"></model-viewer>
-                <!--osumi's camera model-->
-                <model-viewer alt="cameraOsumi" src="models/modernCamera.glb" shadow-intensity="1" camera-controls id="osumiCamModel" class="modelViewer"></model-viewer>
-            </div> 
+             <div id="viewerGroup">
+                <!-- Exit viewer button-->
+                <div id="exitViewerButton"><img src="images/exitIcon.svg" alt="exitViewer"></div> 
+                <div id="viewerContainer">
+                    <!-- Estella's camera model-->
+                    <model-viewer alt="cameraEstella" src="models/antiqueCamera.glb" shadow-intensity="1" camera-controls id="estellaCamModel" class="modelViewer"></model-viewer>
+                    <!--Osumi's camera model-->
+                    <model-viewer alt="cameraOsumi" src="models/camera.glb" shadow-intensity="1" camera-controls id="osumiCamModel" class="modelViewer"></model-viewer>
+                </div> 
+             </div>
+
 
         </div> <!-- collection content-->
-
-
     </section>
 
     <section id="archives">
