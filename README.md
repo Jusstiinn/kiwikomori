@@ -34,6 +34,8 @@ We wanted to set the world in a magical fantasy vibe as it woud open up to a lot
 ## Technologies Used
 [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) - Used to make scenes appear on top of another (e.g. when opening drawers)
 
+[model-viewer](https://modelviewer.dev) - Used to simplify importing a 3D Model as well as coding a interactive 3D Model viewing experience. (for the colletions page)
+
 
 # Assistive AI
 1. Formula used to navigate between the rooms when pressing left/right (JS):

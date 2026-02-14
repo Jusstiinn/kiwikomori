@@ -26,10 +26,37 @@
     </section>
 
     <section id="collection">
+        <div class="collectionBack"> 
+            <input type="checkbox" id="back">
+            <label for="back">Back</label>
+        </div> <!-- back button-->
+        <div class="collectionContent">
+
+
+            <img src="images/collection_shelf.svg" alt="shelf" id="shelf" draggable="false">
+            
+            <!--Camera preview, not blacked out-->
+            <div class="cameraPreview">
+                <img src="images/estellaCamera.svg" alt="estellaCamera" draggable="false" class="estellaCamera">
+                <img src="images/osumiCamera.svg" alt="osumiCamera" draggable="false" class="osumiCamera">
+            </div>
+
+            <!--Camera siloette, blacked out-->
+            <div class="cameraSiloettes">
+                <img src="images/estellaCameraSil.svg" alt="estellaCamera" draggable="false" class="estellaCamera">
+                <img src="images/osumiCameraSil.svg" alt="osumiCamera" draggable="false" class="osumiCamera">
+            </div>
+
+
+
+
+        </div> <!--divider for shelf and camera-->
+
         <div>
-                <input type="checkbox" id="back">
-                <label for="back">Back</label>
+        <!-- To Do: popup like archives to contain the camara models-->
+        <!-- 3D model of Estella's camera-->
         </div>
+        <model-viewer alt="cameraEstella" src="models/antiqueCamera.glb" shadow-intensity="1" camera-controls ></model-viewer>
     </section>
 
     <section id="archives">
@@ -43,7 +70,7 @@
 
                         <!-- About Us-->
                         <p class="archiveHeader" style="text-align: center;">About Kiwikomori!</p>
-                        <p class="archiveText">Kiwikomori is an independent game developer and artist known for creating immersive and atmospheric games that blend narrative depth with unique visual styles. Founded by a passionate solo developer, Kiwikomori has gained recognition for its ability to craft engaging experiences that resonate with players on an emotional level.<br><br>
+                        <p class="archiveText">Kiwikomori is an independent game development team known for creating immersive and atmospheric games that blend narrative depth with unique visual styles. Founded by a passionate solo developer, Kiwikomori has gained recognition for its ability to craft engaging experiences that resonate with players on an emotional level.<br><br>
                         The studio's games often explore themes of isolation, self-discovery, and the human condition, drawing players into richly detailed worlds filled with memorable characters and thought-provoking stories. Kiwikomori's commitment to quality and innovation has earned it a dedicated fanbase and critical acclaim within the indie game community.</p>
 
 
@@ -172,4 +199,6 @@
 <!--
 <dotlottie-wc src="https://lottie.host/48ec130e-494f-4763-8374-fd58c19b0cb5/OkUB8yLHhU.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
 -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+<!-- Import model-viewer -->
 </html>

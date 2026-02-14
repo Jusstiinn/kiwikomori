@@ -560,6 +560,22 @@ body:has(#archivesbtn:checked) #title, body:has(#collectionbtn:checked) #title {
     z-index: 9999;
 }
 
+.collectionBack {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+    transition: filter 0.3s ease-in-out;
+}
+
+.estellaCamera{
+    width: 200px;
+}
+
+.osumiCamera{
+    width: 200px;
+}
+
 
 /* =============== VISUAL NOVEL VIEW =============== */
 #vnView {
